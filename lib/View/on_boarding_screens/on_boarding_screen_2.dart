@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Auth/login_screen.dart';
-import 'on_boarding_screen_1.dart';
+
 import 'on_boarding_screen_3.dart';
 
 
@@ -19,16 +19,17 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
-    final deviceWidth = MediaQuery.of(context).size.width;
+
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SizedBox(height: 20.h),
-            Image.asset("images/onBoardingGirl.png"),
+            Image.asset("images/onBoardingGirl.png" ),
             SvgPicture.asset("images/Main headline2.svg"),
             SizedBox(height: 10.h),
             SvgPicture.asset("images/Description2.svg"),
@@ -44,13 +45,16 @@ class _OnBoardingScreen2State extends State<OnBoardingScreen2> {
             }),
 
 
-            InkWell(
+            GestureDetector(
                 onTap: (){
                   Navigator.pushAndRemoveUntil(context,
                       MaterialPageRoute(builder: (_)=> const LoginScreen()),
                           (route) => false);
                 },
-                child: Center(child: Text("Skip"),)),
+                child: SizedBox(
+                    width: 100.h,
+                    child: Center(child: Text("Skip"  , style: TextStyle(color: Colors.black54 ,fontSize: 12.sp),),))
+            ),
             SizedBox(height: deviceHeight /9,),
           ],
         ),

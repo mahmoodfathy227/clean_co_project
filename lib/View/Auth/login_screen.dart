@@ -1,11 +1,13 @@
 import 'package:clean_co_project/View/Auth/register_screen.dart';
 import 'package:clean_co_project/View/widgets/auth_button.dart';
 import 'package:clean_co_project/View/widgets/login_button.dart';
-import 'package:clean_co_project/View/widgets/on_boarding_button.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:intl_phone_field/intl_phone_field.dart';
+
+
+import '../widgets/auth_text_field.dart';
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -14,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  TextEditingController passwordController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     final deviceWidth = MediaQuery.of(context).size.width;
@@ -61,7 +64,13 @@ class _LoginScreenState extends State<LoginScreen> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
 
-          Text("LOG IN" , style: TextStyle(fontSize: 30.sp , fontWeight: FontWeight.w500 , color: Colors.black),),
+          Text("Log In" , style: TextStyle(
+              fontSize: 40.sp ,
+              fontWeight: FontWeight.w800 ,
+              color: Colors.black,
+            fontFamily: 'inter'
+
+          ),),
           SizedBox(height: 15.h,),
          Row(
 
@@ -74,50 +83,48 @@ class _LoginScreenState extends State<LoginScreen> {
 SizedBox(height: 15.h,),
           Center(child: Text("or"),),
           SizedBox(height: 15.h,),
+          //Phone Number
           Container(
             width: deviceWidth - 50 ,
-            height: 100,
-            child: IntlPhoneField(
+            height: 60.h,
+            child:
+            TextField(
+              style:  TextStyle(color: Colors.black , fontSize: 12.sp),
+keyboardType: TextInputType.number,
+              decoration: InputDecoration(
 
-              decoration:  InputDecoration(
-
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.sp)
-                ),
-               filled: true,
-                fillColor: Color(0xffF5F6FA),
-                focusColor: Colors.blue,
-hintText: "Enter Your Phone Number",
-    hintStyle: TextStyle(color: Colors.grey[500] , fontSize: 12.sp),
+                  filled: true,
+                  fillColor: Color(0xffF5F6FA),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(10.0.sp),
+                  ),
+                  hintStyle: TextStyle(color: Colors.grey[500] ,  fontSize: 12.sp),
+                  hintText: "Enter Your Phone Number",
+                  prefixIcon: Container(
+                    width: 70.w,
+                    child: Row(
+                      children: [
+                        Padding(
+                          padding: const EdgeInsets.all(15.0),
+                          child: Image.asset("images/qa-button-01.png" , width: 30.w,),
+                        ),
+                        SizedBox(width: 5,),
+                       Container(
+                         color: Colors.grey,
+                         width: 2,
+                         height: 50,
+                       )
+                      ],
+                    ),
+                  )
 
               ),
-
-              initialCountryCode: 'QA',
-              autofocus: true,
-
-              onChanged: (phone) {
-                print(phone.completeNumber);
-              },
             ),
+
           ),
           SizedBox(height: 10.h,),
-          Container(
-            width: deviceWidth - 40 ,
-
-            child: TextField(
-              decoration: InputDecoration(
-                filled: true,
-                fillColor: Color(0xffF5F6FA),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(10.0.sp),
-                ),
-                hintStyle: TextStyle(color: Colors.grey[500] ,  fontSize: 12.sp),
-                hintText: "Password",
-suffixIcon: Icon(Icons.visibility_off)
-
-              ),
-            ),
-          ),
+          //Password Field
+          AuthTextField(controller: passwordController, hintText: "Password", isPassword: true),
           SizedBox(height: 10.h,),
           Align(
             alignment: Alignment.bottomRight,
@@ -133,7 +140,8 @@ suffixIcon: Icon(Icons.visibility_off)
           Align(
               alignment: Alignment.bottomLeft,
               child: Text("Don't Have an Account ?" , style: TextStyle(color: Colors.black ,
-                fontSize: 12.sp,
+                fontSize: 14.sp,
+                fontWeight: FontWeight.w500
        ),)),
           SizedBox(height: 10.h,),
           InkWell(
@@ -144,7 +152,8 @@ Navigator.push(context, MaterialPageRoute(builder: (_)=> RegisterScreen()));
 
 
             },
-              child: SvgPicture.asset("images/registerText.svg" , width: 150.w,))
+              child: SvgPicture.asset("images/registerText.svg" , width: 150.w,)),
+          SizedBox(height: 10.h,),
         ],
       ),
     );

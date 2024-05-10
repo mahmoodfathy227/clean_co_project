@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../Auth/login_screen.dart';
-import 'on_boarding_screen_1.dart';
+
 
 
 class OnBoardingScreen3 extends StatefulWidget {
@@ -18,9 +18,10 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
   @override
   Widget build(BuildContext context) {
     final deviceHeight = MediaQuery.of(context).size.height;
-    final deviceWidth = MediaQuery.of(context).size.width;
+
 
     return Scaffold(
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -43,13 +44,16 @@ class _OnBoardingScreen3State extends State<OnBoardingScreen3> {
             }),
 
 
-            InkWell(
+            GestureDetector(
                 onTap: (){
                   Navigator.pushAndRemoveUntil(context,
                       MaterialPageRoute(builder: (_)=> const LoginScreen()),
                           (route) => false);
                 },
-                child: Center(child: Text("Skip"),)),
+                child: SizedBox(
+                    width: 100.h,
+                    child: Center(child: Text("Skip"  , style: TextStyle(color: Colors.black54 ,fontSize: 12.sp),),))
+            ),
             SizedBox(height: deviceHeight /9,),
           ],
         ),

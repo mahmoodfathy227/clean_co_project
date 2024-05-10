@@ -24,7 +24,9 @@ class _LoginButtonState extends State<LoginButton> {
         child: Text(widget.buttonText, style: TextStyle(
             color: Colors.black,
             letterSpacing: 4.w,
-            fontSize: 12.sp
+            fontSize: 12.sp,
+          fontFamily: 'inter',
+          fontWeight: FontWeight.w500
         ),),
       ),
     );
