@@ -29,18 +29,20 @@ void initState() {
     return Scaffold(
       backgroundColor: Color(0xffD9ECF8),
     body: SafeArea(
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          SvgPicture.asset("images/Bubbles.svg" , width: deviceWidth,),
-          Center(child: Image.asset("images/splashLogo.png")),
-          SvgPicture.asset("images/Main headline.svg"),
-          Align(
-            alignment: Alignment.bottomRight,
-              child: SvgPicture.asset("images/bubble 04.svg")),
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            SvgPicture.asset("images/Bubbles.svg" , width: deviceWidth,),
+            Center(child: Image.asset("images/splashLogo.png")),
+            SvgPicture.asset("images/Main headline.svg"),
+            Align(
+              alignment: Alignment.bottomRight,
+                child: SvgPicture.asset("images/bubble 04.svg")),
 
-        ],
+          ],
+        ),
       ),
 
     ),

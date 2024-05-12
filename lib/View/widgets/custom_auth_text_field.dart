@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-class AuthTextField extends StatefulWidget {
-  const AuthTextField({super.key, required this.controller, required this.hintText, required this.isPassword});
-final TextEditingController controller;
-final String hintText;
-final bool isPassword;
+class CustomAuthTextField extends StatefulWidget {
+
+
+  const CustomAuthTextField({super.key, required this.controller, required this.hintText, required this.isPassword});
+  final TextEditingController controller;
+  final String hintText;
+  final bool isPassword;
   @override
-  State<AuthTextField> createState() => _AuthTextFieldState();
+  State<CustomAuthTextField> createState() => _CustomAuthTextFieldState();
 }
 
-class _AuthTextFieldState extends State<AuthTextField> {
+class _CustomAuthTextFieldState extends State<CustomAuthTextField> {
   bool isVisible = true;
   @override
   Widget build(BuildContext context) {
@@ -18,6 +20,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
       width: 332.w,
       height: 50.h,
       child: TextField(
+        textAlign: TextAlign.center,
         style:  TextStyle(color: Colors.black , fontSize: 12.sp),
         obscureText: widget.isPassword ? isVisible : false,
         controller: widget.controller,
@@ -35,16 +38,7 @@ class _AuthTextFieldState extends State<AuthTextField> {
 
             hintStyle: TextStyle(color: Colors.grey[500],  fontSize: 12.sp , fontFamily: 'inter'),
             hintText: widget.hintText,
-            suffixIcon: widget.isPassword ?
-           IconButton(onPressed: (){
-             isVisible =! isVisible;
-             setState(() {
 
-             });
-           },
-               icon: Icon( isVisible ? Icons.visibility_off_sharp  :  Icons.visibility_rounded ))
-
-                : SizedBox()
 
         ),
       ),

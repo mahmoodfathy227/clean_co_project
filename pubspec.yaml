@@ -93,6 +93,16 @@ flutter:
      - family: allerta
        fonts:
          - asset: font/Allerta-Regular.ttf
+
+
+     - family: raleway
+       fonts:
+         - asset: font/Raleway-VariableFont_wght.ttf
+
+
+
+
+
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

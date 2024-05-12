@@ -1,9 +1,14 @@
 import 'package:clean_co_project/Controller/LoginController.dart';
+import 'package:clean_co_project/View/Auth/login_screen.dart';
 import 'package:clean_co_project/View/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+
+import 'View/Auth/code_sent.dart';
+import 'View/Auth/password_recovery.dart';
+import 'View/Auth/set_up_new_password.dart';
 
 void main() {
  WidgetsFlutterBinding.ensureInitialized();
@@ -29,10 +34,10 @@ class MyApp extends StatelessWidget {
       ],
       child: ScreenUtilInit(
 
-        designSize: const Size(360, 690),
+        designSize: const Size(375, 812),
         minTextAdapt: true,
         splitScreenMode: true,
-        // Use builder only if you need to use library outside ScreenUtilInit context
+        // Use builder only if yo u need to use library outside ScreenUtilInit context
         builder: (_ , child) {
           return MaterialApp(
             debugShowCheckedModeBanner: false,
