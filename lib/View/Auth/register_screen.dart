@@ -109,7 +109,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
               Padding(
                 padding:  EdgeInsets.only(left: 25.w , top: 35.h  ),
                 child:   Container(
-                  width: 171.w,
+                  width: 191.w,
 
                   child: Text(
                     "REGISTER",

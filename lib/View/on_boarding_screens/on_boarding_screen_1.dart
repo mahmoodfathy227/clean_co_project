@@ -62,34 +62,30 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
                 ],
               ),
             ),
-            Positioned(
-              bottom: 60.h,
-              left: 150.w,
-              child: Row(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Indicator(
-                    positionIndex: 0,
-                    currentIndex: currentIndex,
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Indicator(
-                    positionIndex: 1,
-                    currentIndex: currentIndex,
-                  ),
-                  SizedBox(
-                    width: 10.w,
-                  ),
-                  Indicator(
-                    positionIndex: 2,
-                    currentIndex: currentIndex,
-                  ),
-                ],
-              ),
+            Row(
+              mainAxisSize: MainAxisSize.max,
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: <Widget>[
+                Indicator(
+                  positionIndex: 0,
+                  currentIndex: currentIndex,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Indicator(
+                  positionIndex: 1,
+                  currentIndex: currentIndex,
+                ),
+                SizedBox(
+                  width: 10.w,
+                ),
+                Indicator(
+                  positionIndex: 2,
+                  currentIndex: currentIndex,
+                ),
+              ],
             ),
             SizedBox(height: 15.h,),
             OnBoardingButton(
@@ -103,9 +99,7 @@ class _OnBoardingScreen1State extends State<OnBoardingScreen1> {
                     nextFunction();
                   }
 
-                  // Navigator.pushAndRemoveUntil(context,
-                  //     MaterialPageRoute(builder: (_)=> OnBoardingScreen2()),
-                  //         (route) => false);
+
                 }),
 
             GestureDetector(
